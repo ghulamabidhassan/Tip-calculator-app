@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./dist/sass.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Tip calculator app</title>
+  </head>
+  <body>
+    <div class="main" role="main">
+      <div class="container">
+        <div class="titles">
+          <h2 class="title">spli</h2>
+          <h2 class="title">tter</h2>
+        </div>
+        <div class="calculator">
+          <div class="left">
+            <div class="div-one">
+              <h2 class="bill">Bill</h2>
+              <input type="number" class="input bill-input" />
+            </div>
+            <div class="div-two">
+              <h2 class="tip">Select Tip %</h2>
+              <article class="percent">
+                <span>5%</span>
+                <span>10%</span>
+                <span>15%</span>
+                <span>25%</span>
+                <span>50%</span>
+                <span>Custom</span>
+              </article>
+            </div>
+            <div class="div-three">
+              <section>
+                <article class="three-article">
+                  <h2 class="people">Number of People</h2>
+                  <h2 class="zero">Can't be zero</h2>
+                </article>
+                <article>
+                  <input type="number" class="num-people" />
+                </article>
+              </section>
+            </div>
+          </div>
+          <div class="right">
+            <article>
+              <div class="tips">
+                <div>
+                  <h2>Tip Amount</h2>
+                  <h2 class="person">/ person</h2>
+                </div>
+                <div class="amount">$4.27</div>
+              </div>
+              <div class="tips">
+                <div>
+                  <h2>Total</h2>
+                  <h2 class="person">/ person</h2>
+                </div>
+                <div class="amount">$32.79</div>
+              </div>
+            </article>
+            <article><button class="reset btn">reset</button></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

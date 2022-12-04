@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+$Strong-cyan: hsl(172, 67%, 45%);
+$Very-dark-cyan: hsl(183, 100%, 15%);
+$Dark-grayish-cyan: hsl(186, 14%, 43%);
+$Grayish-cyan: hsl(184, 14%, 56%);
+$Light-grayish-cyan: hsl(185, 41%, 84%);
+$Very-light-grayish-cyan: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 1em;
+  font-family: Space Mono, sans-serif;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $Light-grayish-cyan;
+}
+
+.titles {
+  margin-bottom: 1em;
+}
+
+.title {
+  color: $Very-dark-cyan;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.calculator {
+  background-color: $White;
+  height: auto;
+  width: 100%;
+  border-radius: 1em;
+  padding: 1.5em 1.5em;
+  column-gap: 1.8em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.div-one {
+  margin: 0.5em 0 1em 0;
+}
+
+.div-two {
+  margin: 0.7em 0 1.3em 0;
+}
+
+.percent {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.4em 0;
+  gap: 0.8em;
+
+  span {
+    display: block;
+    padding: 0.5em 1.3em;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 0;
+    width: fit-content;
+    background-color: $Very-dark-cyan;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 0.35em;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.three-article {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  background-color: $Very-dark-cyan;
+  border-radius: 1em;
+  padding: 1.5em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.reset {
+  width: 100%;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.4em 0;
+  border-radius: 0.3em;
+  border: 2.5px solid transparent;
+  background-color: $Strong-cyan;
+  color: $Very-dark-cyan;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.reset:hover {
+  opacity: 0.8;
+}
+
+.tips {
+  font-size: 0.6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+}
+
+.person {
+  color: $Dark-grayish-cyan;
+}
+
+.amount {
+  font-size: 4em;
+  color: $Strong-cyan;
+  font-weight: 700;
+}
+
+:is(.bill, .tip, .people, .zero) {
+  font-size: 1em;
+  color: $Dark-grayish-cyan;
+}
+
+input {
+  width: 100%;
+  padding: 0.35em 0;
+  margin: 0.2em 0;
+  border-radius: 0.3em;
+  border: 2.5px solid transparent;
+  outline: none;
+  background-color: $Very-light-grayish-cyan;
+  text-align: right;
+  font-size: 1.5em;
+}
+
+input:focus {
+  border: 2.5px solid;
+  border-color: $Strong-cyan;
+}
+
+input[type="number"] {
+  color: $Very-dark-cyan;
+  font-weight: 700;
+}
+
+.titles {
+  margin-bottom: 2em;
+}
+
+// 1024px
+
+@media screen and (min-width: 64em) {
+  .calculator {
+    font-size: 0.85em;
+    background-color: white;
+    height: auto;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titles {
+    margin-bottom: 3em;
+  }
+}
+
+// 1366px display
+
+@media screen and (min-width: 85.375em) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .calculator {
+    background-color: white;
+    height: auto;
+    width: 55%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+  }
+}
+
+// 1920px
+
+@media screen and (min-width: 120em) {
+  .container {
+    font-size: 1.3em;
+  }
+
+  .calculator {
+    width: 50%;
+  }
+}
