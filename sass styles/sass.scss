@@ -24,7 +24,7 @@ body {
 }
 
 .main {
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -48,6 +48,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  //   height: fit-content;
 }
 
 .calculator {
@@ -175,9 +176,21 @@ input[type="number"] {
   margin-bottom: 2em;
 }
 
+// 768px
+
+@media screen and (min-width: 48em) {
+  .calculator {
+    width: 70%;
+  }
+}
+
 // 1024px
 
 @media screen and (min-width: 64em) {
+  .main {
+    height: 100vh;
+  }
+
   .calculator {
     font-size: 0.85em;
     background-color: white;
@@ -189,6 +202,10 @@ input[type="number"] {
 
   .titles {
     margin-bottom: 3em;
+  }
+
+  .right {
+    margin-top: 0;
   }
 }
 
