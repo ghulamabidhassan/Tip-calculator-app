@@ -7,6 +7,7 @@ $Grayish-cyan: hsl(184, 14%, 56%);
 $Light-grayish-cyan: hsl(185, 41%, 84%);
 $Very-light-grayish-cyan: hsl(189, 41%, 97%);
 $White: hsl(0, 0%, 100%);
+$font-family: Space Mono, sans-serif;
 
 *,
 *::before,
@@ -56,7 +57,7 @@ body {
   height: auto;
   width: 100%;
   border-radius: 1em;
-  padding: 1.5em 1.5em;
+  padding: 1.5em 2em;
   column-gap: 1.8em;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -89,6 +90,37 @@ body {
     border-radius: 0.35em;
     text-align: center;
     cursor: pointer;
+    transition: 250ms ease-in-out;
+
+    &:hover {
+      background-color: $Strong-cyan;
+      color: $Very-dark-cyan;
+    }
+  }
+
+  .active-btn {
+    background-color: $Strong-cyan;
+    color: $Very-dark-cyan;
+  }
+
+  .custom {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+  }
+
+  .custom-input {
+    height: 100%;
+    padding: 0 0.5em 0 0;
+    width: 100%;
+    margin: 0 0em;
+    font-size: 1.2em;
+  }
+
+  .custom-input::placeholder {
+    font-size: 0.8em;
+    color: $Very-dark-cyan;
   }
 }
 
@@ -125,6 +157,7 @@ body {
 
 .reset:hover {
   opacity: 0.8;
+  background-color: $Strong-cyan;
 }
 
 .tips {
@@ -152,7 +185,7 @@ body {
 
 input {
   width: 100%;
-  padding: 0.35em 0;
+  padding: 0.35em 0.8em 0.35em 0;
   margin: 0.2em 0;
   border-radius: 0.3em;
   border: 2.5px solid transparent;
@@ -160,6 +193,36 @@ input {
   background-color: $Very-light-grayish-cyan;
   text-align: right;
   font-size: 1.5em;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zero {
+  display: none;
+  color: rgb(168, 50, 50);
+}
+
+.input-check:has(input:invalid) .zero {
+  display: block;
+}
+
+.input-check:has(input:invalid) input {
+  border: 2.5px solid rgb(168, 50, 50);
+}
+
+.icons {
+  position: absolute;
+  left: 5%;
 }
 
 input:focus {
@@ -198,6 +261,7 @@ input[type="number"] {
     width: 65%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: 1.5em 1.5em;
   }
 
   .titles {
@@ -223,7 +287,7 @@ input[type="number"] {
   .calculator {
     background-color: white;
     height: auto;
-    width: 55%;
+    width: 45%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow: hidden;

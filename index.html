@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
     <link rel="stylesheet" href="./dist/sass.css" />
     <link
       rel="icon"
@@ -25,27 +24,48 @@
           <div class="left">
             <div class="div-one">
               <h2 class="bill">Bill</h2>
-              <input type="number" class="input bill-input" />
+              <div class="input-div">
+                <span class="dollar icons"
+                  ><img src="./images/icon-dollar.svg" alt=""
+                /></span>
+                <input type="number" pattern="[0-9]" class="input bill-input" />
+              </div>
             </div>
             <div class="div-two">
               <h2 class="tip">Select Tip %</h2>
               <article class="percent">
-                <span>5%</span>
-                <span>10%</span>
-                <span>15%</span>
-                <span>25%</span>
-                <span>50%</span>
-                <span>Custom</span>
+                <span data-id="5" class="percentage tip-array">5%</span>
+                <span data-id="10" class="percentage tip-array">10%</span>
+                <span data-id="15" class="active-btn percentage tip-array"
+                  >15%</span
+                >
+                <span data-id="25" class="percentage tip-array">25%</span>
+                <span data-id="50" class="percentage tip-array">50%</span>
+                <span data-id="custom" class="custom tip-array"
+                  ><input
+                    class="custom-input"
+                    placeholder="Custom"
+                    type="number"
+                /></span>
               </article>
             </div>
             <div class="div-three">
-              <section>
+              <section class="input-check">
                 <article class="three-article">
                   <h2 class="people">Number of People</h2>
                   <h2 class="zero">Can't be zero</h2>
                 </article>
-                <article>
-                  <input type="number" class="num-people" />
+                <article class="input-div">
+                  <span class="person icons"
+                    ><img src="./images/icon-person.svg" alt=""
+                  /></span>
+                  <input
+                    type="number"
+                    pattern="[0-9]"
+                    min="1"
+                    max="25"
+                    class="num-people"
+                  />
                 </article>
               </section>
             </div>
@@ -57,14 +77,14 @@
                   <h2>Tip Amount</h2>
                   <h2 class="person">/ person</h2>
                 </div>
-                <div class="amount">$4.27</div>
+                <div class="amount">$<span class="per-person">4.27</span></div>
               </div>
               <div class="tips">
                 <div>
                   <h2>Total</h2>
                   <h2 class="person">/ person</h2>
                 </div>
-                <div class="amount">$32.79</div>
+                <div class="amount">$<span class="total-amt">32.79</span></div>
               </div>
             </article>
             <article><button class="reset btn">reset</button></article>
@@ -72,5 +92,6 @@
         </div>
       </div>
     </div>
+    <script src="./app.js" defer></script>
   </body>
 </html>
